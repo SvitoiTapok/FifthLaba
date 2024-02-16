@@ -1,5 +1,6 @@
-import Commands.Command;
-import Commands.CommandInfo;
+package MainClasses;
+
+import Commands.*;
 
 import java.util.*;
 
@@ -7,9 +8,13 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        //Map<Integer, Product> products = new HashMap<>();
+        //Map<Integer, MainClasses.Product> products = new HashMap<>();
         HashMap<String, Command> commands = new HashMap<>();
-        commands.put("commandInfo", CommandInfo.COMMAND_INFO);
+        commands.put("help", Help.HELP);
+        commands.put("info", Info.INFO);
+        //довести вывод до ума
+        commands.put("show", Show.SHOW);
+        commands.put("add", Add.ADD);
 
 
         while (true){
@@ -23,7 +28,7 @@ public class Main {
                     commands.get(splitedInput[0]).executeWithParameters(Arrays.copyOfRange(splitedInput, 1, splitedInput.length));
                 }
             }else {
-                System.out.println("команды " + splitedInput[0] + " не было найдено. Пожалуйста, введите commandInfo для получения доступного списка команд");
+                System.out.println("команды " + splitedInput[0] + " не было найдено. Пожалуйста, введите help для получения доступного списка команд");
             }
 
         }

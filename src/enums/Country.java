@@ -1,8 +1,9 @@
 package enums;
 
 public enum Country {
+    UNITED_KINGDOM,
     USA,
-    INDIA,
-    THAILAND,
+    SPAIN,
+    ITALY,
     NORTH_KOREA;
 }

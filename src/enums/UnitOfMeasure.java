@@ -1,8 +1,7 @@
 package enums;
 
 public enum UnitOfMeasure {
-    METERS,
-    CENTIMETERS,
+    KILOGRAMS,
     SQUARE_METERS,
-    PCS;
+    GRAMS;
 }

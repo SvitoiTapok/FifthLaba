@@ -1,0 +1,80 @@
+@startuml
+class InnerClasses.Person {
+- String name
+- String passportID
+- EyeColor eyeColor
+- HairColor hairColor
+- Country nationality
+}
+class Commands.Info {
++ {static} Info INFO
++ void execute()
+}
+class Commands.Help {
++ {static} Help COMMAND_INFO
++ void execute()
+}
+interface Commands.Command {
+~ void execute()
+~ void executeWithParameters(String[])
+}
+class InnerClasses.Month {
+- {static} HashMap<String,String> mounths
+}
+class InnerClasses.Coordinates {
+- double x
+- Float y
+}
+class Main {
++ {static} void main(String[])
+}
+enum enums.Country {
++  UNITED_KINGDOM
++  USA
++  SPAIN
++  ITALY
++  NORTH_KOREA
+}
+class ProductCollection {
+- {static} ProductCollection PRODUCT_COLLECTION
+- LinkedHashSet<Product> products
+- Date data
++ LinkedHashSet<Product> getProducts()
++ void addProducts(Collection<Product>)
++ Date getData()
+}
+class Test {
++ {static} void main(String[])
+}
+enum enums.UnitOfMeasure {
++  KILOGRAMS
++  SQUARE_METERS
++  GRAMS
+}
+enum enums.HairColor {
++  GREEN
++  BLACK
++  ORANGE
++  WHITE
+}
+enum enums.EyeColor {
++  GREEN
++  WHITE
++  BROWN
+}
+class Product {
+- long id
+- String name
+- Coordinates coordinates
+- java.time.ZonedDateTime creationDate
+- Float price
+- UnitOfMeasure unitOfMeasure
+- Person owner
++ int compareTo(Product)
+}
+
+
+Commands.Command <|.. Commands.Info
+Commands.Command <|.. Commands.Help
+Comparable <|.. Product
+@enduml
