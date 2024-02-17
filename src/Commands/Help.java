@@ -1,5 +1,7 @@
 package Commands;
 
+import java.io.InputStream;
+
 public class Help implements Command{
     public final static Help HELP = new Help();
 
@@ -8,7 +10,7 @@ public class Help implements Command{
     private Help(){};
 
     @Override
-    public void execute(){
+    public void execute(InputStream inputStream){
         System.out.println("Вот все доступные команды с описанием:");
         System.out.println("help : вывести справку по доступным командам\n" +
                 "info : вывести в стандартный поток вывода информацию о коллекции (тип, дата инициализации, количество элементов и т.д.)\n" +

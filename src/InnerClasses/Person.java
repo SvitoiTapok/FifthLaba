@@ -47,4 +47,26 @@ public class Person {
         this.passportID = passportID;
         return true;
     }
+
+
+    public String getName() {
+        return name;
+    }
+
+    public Country getNationality() {
+        return nationality;
+    }
+
+    public EyeColor getEyeColor() {
+        return eyeColor;
+    }
+
+    public HairColor getHairColor() {
+        return hairColor;
+    }
+
+    public String getPassportID() {
+        return passportID;
+    }
+
 }

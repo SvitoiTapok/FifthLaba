@@ -4,6 +4,7 @@ import InnerClasses.Month;
 import MainClasses.ProductCollection;
 
 import javax.xml.crypto.Data;
+import java.io.InputStream;
 
 public class Info implements Command{
     public final static Info INFO = new Info();
@@ -11,7 +12,7 @@ public class Info implements Command{
     private Info(){}
 
     @Override
-    public void execute(){
+    public void execute(InputStream inputStream){
         String[] data = ProductCollection.PRODUCT_COLLECTION.getData().toString().split(" ");
 
         System.out.println("Коллекция состоит из элементов типа Product, она была создана " +

@@ -24,6 +24,14 @@ public class Coordinates {
         return true;
     }
 
+    public double getX() {
+        return x;
+    }
+
+    public Float getY() {
+        return y;
+    }
+
     @Override
     public String toString() {
         return "[" + x + ", " + y + "]";

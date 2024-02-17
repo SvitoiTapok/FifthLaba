@@ -1,6 +1,9 @@
 package Commands;
 
+import MainClasses.Product;
 import MainClasses.ProductCollection;
+
+import java.io.InputStream;
 
 public class Show implements Command{
     public final static Show SHOW = new Show();
@@ -8,7 +11,14 @@ public class Show implements Command{
     private Show(){}
 
     @Override
-    public void execute(){
-        System.out.println(ProductCollection.PRODUCT_COLLECTION.getProducts());
+    public void execute(InputStream inputStream){
+        if(ProductCollection.PRODUCT_COLLECTION.getProducts().isEmpty()){
+            System.out.println("На данный момент в коллекции нет элементов");
+            return;
+        }
+        for(Product product: ProductCollection.PRODUCT_COLLECTION.getProducts()){
+            System.out.println(product);
+        }
+        System.out.println();
     }
 }
